@@ -203,6 +203,7 @@ export interface DevContainerCliUpResult extends DevContainerCliSuccessResult {
 }
 export interface DevContainerCliUpArgs {
   workspaceFolder: string;
+  config?: string,
   additionalCacheFroms?: string[];
   skipContainerUserIdUpdate?: boolean;
   env?: string[];

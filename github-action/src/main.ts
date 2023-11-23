@@ -48,6 +48,7 @@ export async function runMain(): Promise<void> {
 		const imageTag = emptyStringAsUndefined(core.getInput('imageTag'));
 		const platform = emptyStringAsUndefined(core.getInput('platform'));
 		const subFolder: string = core.getInput('subFolder');
+		const config: string = core.getInput('config');
 		const runCommand = core.getInput('runCmd');
 		const inputEnvs: string[] = core.getMultilineInput('env');
 		const inputEnvsWithDefaults = populateDefaults(inputEnvs);
@@ -142,6 +143,7 @@ export async function runMain(): Promise<void> {
 			const upResult = await core.group('🏃 start container', async () => {
 				const args: DevContainerCliUpArgs = {
 					workspaceFolder,
+					config,
 					additionalCacheFroms: cacheFrom,
 					skipContainerUserIdUpdate,
 					env: inputEnvsWithDefaults,

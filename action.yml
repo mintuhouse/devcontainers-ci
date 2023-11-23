@@ -21,6 +21,10 @@ inputs:
     required: false
     description: Specify a child folder (containing a .devcontainer) instead of using the repository root
     default:
+  config:
+    required: false
+    description: .devcontainer.json path
+    default:
   checkoutPath:
     required: false
     description: Specify path to checked out folder if not using default (or for testing with nektos/act)
